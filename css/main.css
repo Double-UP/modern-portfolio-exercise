@@ -1,11 +1,10 @@
-$primary-color: #444;
-
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
-  background: $primary-color;
+  background: #444;
   color: #fff;
   height: 100%;
   margin: 0;
@@ -13,14 +12,15 @@ body {
   line-height: 1.5;
 }
 
-// Headings
 h1,
 h2,
 h2 {
   margin: 0;
   font-weight: 400;
+}
 
-  &.lg-heading {
-    font-size: 6rem;
-  }
+h1.lg-heading,
+h2.lg-heading,
+h2.lg-heading {
+  font-size: 6rem;
 }
