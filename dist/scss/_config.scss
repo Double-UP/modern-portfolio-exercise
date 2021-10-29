@@ -1,5 +1,6 @@
 $primary-color: #444;
 $secondary-color: #eece1a;
+$tertiary-color: #d81d46;
 $show-home-image: true;
 $home-image: url(../img/background.jpg);
 $background-opacity: 0.9;
@@ -29,6 +30,24 @@ $background-opacity: 0.9;
         z-index: -1;
       }
     }
+  }
+}
+
+// Set text color (main coloring)
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Set text color (yellow coloring)
+@function transform-yellow-color($color) {
+  @if (lightness($color) > 40) {
+    @return $tertiary-color;
+  } @else {
+    @return $secondary-color;
   }
 }
 

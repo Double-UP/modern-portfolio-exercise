@@ -11,7 +11,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #fff;
+    background: set-text-color($primary-color);
     @include easeOut;
   }
 
@@ -96,7 +96,8 @@
       height: 250px;
       background: url(../img/portrait.jpg);
       border-radius: 50%;
-      border: solid 3px $secondary-color;
+      border: solid 3px
+        transform-yellow-color($primary-color);
     }
   }
 
@@ -110,7 +111,7 @@
     }
 
     &.current > a {
-      color: $secondary-color;
+      color: transform-yellow-color($primary-color);
     }
   }
 
@@ -120,13 +121,13 @@
     font-size: 30px;
     text-transform: uppercase;
     padding: 1rem 0;
-    font-weight: 300;
-    color: #fff;
+    font-weight: 400;
+    color: set-text-color($primary-color);
     text-decoration: none;
     @include easeOut;
 
     &:hover {
-      color: $secondary-color;
+      color: transform-yellow-color($primary-color);
     }
   }
 }
