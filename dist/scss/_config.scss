@@ -1,6 +1,7 @@
 $primary-color: #444;
 $secondary-color: #eece1a;
 $tertiary-color: #d81d46;
+$gray-shade: lighten(#444, 65);
 $show-home-image: true;
 $home-image: url(../img/background.jpg);
 $background-opacity: 0.9;
@@ -48,6 +49,24 @@ $background-opacity: 0.9;
     @return $tertiary-color;
   } @else {
     @return $secondary-color;
+  }
+}
+
+// Set text box background (gray shade coloring)
+@function box-color($color) {
+  @if (lightness($color) > 40) {
+    @return $gray-shade;
+  } @else {
+    @return "";
+  }
+}
+
+// Set button color
+@function button-color($color) {
+  @if (lightness($color) < 40) {
+    @return #fff;
+  } @else {
+    @return rgb(231, 226, 226);
   }
 }
 

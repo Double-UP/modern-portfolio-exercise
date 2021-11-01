@@ -269,7 +269,7 @@ main#home h1 {
   grid-area: bioimage;
   margin: auto;
   border-radius: 50%;
-  border: 2px solid #444;
+  border: 2px solid #eece1a;
 }
 
 .about-info .bio {
@@ -278,6 +278,7 @@ main#home h1 {
   -ms-grid-column-span: 2;
   grid-area: bio;
   font-size: 1.5rem;
+  border-radius: 10px;
 }
 
 .about-info .job-1 {
@@ -304,6 +305,13 @@ main#home h1 {
   border-bottom: 5px solid #eece1a;
 }
 
+.about-info div[class*="job-"],
+.about-info .bio {
+  background: "";
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
 .projects {
   display: -ms-grid;
   display: grid;
@@ -314,7 +322,7 @@ main#home h1 {
 
 .projects img {
   width: 100%;
-  border: 3px solid #fff;
+  border: 3px solid rgba(255, 255, 255, 0.6);
 }
 
 .projects img:hover {
@@ -324,28 +332,64 @@ main#home h1 {
   transition: all 0.5s ease-out;
 }
 
-.btn, .btn-light, .btn-dark {
+.boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
+}
+
+.boxes div {
+  font-size: 2rem;
+  border: 3px solid #fff;
+  padding: 1.5rem 2.5rem;
+  margin-bottom: 3rem;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.boxes div:hover {
+  padding: 0.5rem 1.5rem;
+  background: #eece1a;
+  color: #000;
+}
+
+.boxes div:hover span {
+  color: #000;
+}
+
+.btn, .btn-dark, .btn-light {
   display: block;
   padding: 0.5rem 1rem;
   border: 0;
   margin-bottom: 0.3rem;
 }
 
-.btn:hover, .btn-light:hover, .btn-dark:hover {
+.btn:hover, .btn-dark:hover, .btn-light:hover {
   background: #eece1a;
-  color: #000;
+  color: #fff;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
+}
+
+.btn-dark {
+  background: #fff;
+  color: #444;
 }
 
 .btn-light {
   background: black;
   color: #fff;
-}
-
-.btn-dark {
-  background: #c4c4c4;
-  color: #333;
 }
 
 #main-footer {
@@ -420,10 +464,17 @@ main#home h1 {
 }
 
 @media screen and (max-width: 500px) {
-  main#home {
+  main {
+    padding: 2rem;
+  }
+  main #home h1 {
     margin-top: 10vh;
   }
-  .projects {
+  main .lg-heading {
+    margin-top: 1rem;
+    font-size: 5rem;
+  }
+  main .projects {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
